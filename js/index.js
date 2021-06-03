@@ -86,20 +86,23 @@ const pintarListaGoT = () => {
       const imagenGirada = elementoPersonaje.querySelector(".imgPersonaje");
       imagenGirada.classList.add("img-girada");
     }
-    // Botón Habla
-
-    const elementoComunicacion =
-      elementoPersonaje.querySelector(".comunicaciones");
-    const fraseComunicacion = elementoPersonaje.querySelector(".frase");
     const botonHabla = elementoPersonaje.querySelector(".boton-habla");
+    const elementoComunicacion = document.querySelector(".comunicaciones");
+    const fraseComunicacion = elementoComunicacion.querySelector(".frase");
+
+    const personajeSeleccionado = personajes.find(
+      (personajes) => personajes.nombre === nombre
+    );
 
     botonHabla.addEventListener("click", () => {
-      console.log("No quiero hablar");
-      /*     fraseComunicacion.textContent = comunicar();
-    elementoComunicacion.classList.add("on");
-    setTimeout(() => {
-      elementoComunicacion.classList.remove("on");
-    }, 2000); */
+      fraseComunicacion.textContent = personajeSeleccionado.comunicar();
+      elementoComunicacion.classList.add("on");
+      setTimeout(() => {
+        elementoComunicacion.classList.remove("on");
+      }, 2000);
+      const imgPersonaje = elementoComunicacion.querySelector(".imgPersonaje");
+      imgPersonaje.src = `img/${nombre}.jpg`;
+      imgPersonaje.alt = `${nombre} de ${familia}`;
     });
 
     // Función MORIR
@@ -115,11 +118,8 @@ const pintarListaGoT = () => {
     const btnMuereAsignado = () => {
       btnMuere.addEventListener("click", pintarListaGoTMuertosNoMuertos);
     };
-    const personajeAsesinado = personajes.find(
-      (personajes) => personajes.nombre === nombre
-    );
     const pintarListaGoTMuertosNoMuertos = () => {
-      personajeAsesinado.muere();
+      personajeSeleccionado.muere();
       borrarListaGoT();
       pintarListaGoT();
       btnMuereAsignado();
@@ -132,6 +132,5 @@ const pintarListaGoT = () => {
     listaPersonajes.append(elementoPersonaje);
   }
 };
-
 
 pintarListaGoT();
