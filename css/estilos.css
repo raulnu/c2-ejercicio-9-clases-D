@@ -100,6 +100,7 @@ img.card-img-top {
   top: 5px;
 }
 
-.sinInfo {
+.sinInfo,
+.otroEstado {
   display: none;
 }
