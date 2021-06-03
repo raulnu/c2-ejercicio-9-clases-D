@@ -34,11 +34,15 @@ for (const {
       elementoPersonaje.querySelector(".anyos-reinado");
     anyosReinadoPersonaje.classList.remove("sinInfo");
     anyosReinadoPersonaje.textContent = `Años Reinado: ${anyosReinado}`;
+    const iconoPersonaje = elementoPersonaje.querySelector(".emoji");
+    iconoPersonaje.textContent = "👑";
   }
   if (arma) {
     const armaPersonaje = elementoPersonaje.querySelector(".arma");
     armaPersonaje.classList.remove("sinInfo");
     armaPersonaje.textContent = `Arma: ${arma}`;
+    const iconoPersonaje = elementoPersonaje.querySelector(".emoji");
+    iconoPersonaje.textContent = "🗡️";
   }
   if (destreza) {
     const destrezaPersonaje = elementoPersonaje.querySelector(".destreza");
@@ -49,11 +53,15 @@ for (const {
     const pelotismoPersonaje = elementoPersonaje.querySelector(".peloteo");
     pelotismoPersonaje.classList.remove("sinInfo");
     pelotismoPersonaje.textContent = `Peloteo: ${pelotismo}`;
+    const iconoPersonaje = elementoPersonaje.querySelector(".emoji");
+    iconoPersonaje.textContent = "🛡️";
   }
   if (asesorado) {
     const asesorDePersonaje = elementoPersonaje.querySelector(".asesorDe");
     asesorDePersonaje.classList.remove("sinInfo");
     asesorDePersonaje.textContent = `Asesor de: ${asesorado.nombre}`;
+    const iconoPersonaje = elementoPersonaje.querySelector(".emoji");
+    iconoPersonaje.textContent = "🎓";
   }
   if (sirveA) {
     const sirvienteDePersonaje = elementoPersonaje.querySelector(".sirveA");
@@ -63,5 +71,6 @@ for (const {
   const imgPersonaje = elementoPersonaje.querySelector(".imgPersonaje");
   imgPersonaje.src = `img/${nombre}.jpg`;
   imgPersonaje.alt = `${nombre} de ${familia}`;
+
   listaPersonajes.append(elementoPersonaje);
 }
