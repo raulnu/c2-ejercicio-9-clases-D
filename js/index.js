@@ -81,6 +81,8 @@ for (const {
     const iconoMuertoPersonaje =
       elementoPersonaje.querySelector(".estado-muerto");
     iconoMuertoPersonaje.classList.remove("otroEstado");
+    const imagenGirada = elementoPersonaje.querySelector(".imgPersonaje");
+    imagenGirada.classList.add("img-girada");
   }
   // Botón Habla
 
