@@ -19,6 +19,7 @@ for (const {
   asesorado,
   sirveA,
   vivo,
+  comunicar,
 } of personajes) {
   const elementoPersonaje = listaPersonajes
     .querySelector(".personaje-dummy")
@@ -73,7 +74,6 @@ for (const {
   imgPersonaje.src = `img/${nombre}.jpg`;
   imgPersonaje.alt = `${nombre} de ${familia}`;
 
-
   if (vivo) {
     const iconoVivoPersonaje = elementoPersonaje.querySelector(".estado-vivo");
     iconoVivoPersonaje.classList.remove("otroEstado");
@@ -82,7 +82,21 @@ for (const {
       elementoPersonaje.querySelector(".estado-muerto");
     iconoMuertoPersonaje.classList.remove("otroEstado");
   }
+  // Botón Habla
 
+  const elementoComunicacion =
+    elementoPersonaje.querySelector(".comunicaciones");
+  const fraseComunicacion = elementoPersonaje.querySelector(".frase");
+  const botonHabla = elementoPersonaje.querySelector(".boton-habla");
+
+  botonHabla.addEventListener("click", () => {
+    console.log("No quiero hablar");
+    /*     fraseComunicacion.textContent = comunicar();
+    elementoComunicacion.classList.add("on");
+    setTimeout(() => {
+      elementoComunicacion.classList.remove("on");
+    }, 2000); */
+  });
 
   listaPersonajes.append(elementoPersonaje);
 }
