@@ -18,6 +18,7 @@ for (const {
   pelotismo,
   asesorado,
   sirveA,
+  vivo,
 } of personajes) {
   const elementoPersonaje = listaPersonajes
     .querySelector(".personaje-dummy")
@@ -71,6 +72,17 @@ for (const {
   const imgPersonaje = elementoPersonaje.querySelector(".imgPersonaje");
   imgPersonaje.src = `img/${nombre}.jpg`;
   imgPersonaje.alt = `${nombre} de ${familia}`;
+
+
+  if (vivo) {
+    const iconoVivoPersonaje = elementoPersonaje.querySelector(".estado-vivo");
+    iconoVivoPersonaje.classList.remove("otroEstado");
+  } else {
+    const iconoMuertoPersonaje =
+      elementoPersonaje.querySelector(".estado-muerto");
+    iconoMuertoPersonaje.classList.remove("otroEstado");
+  }
+
 
   listaPersonajes.append(elementoPersonaje);
 }
