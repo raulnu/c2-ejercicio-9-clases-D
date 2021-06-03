@@ -108,3 +108,7 @@ img.card-img-top {
 .otroEstado {
   display: none;
 }
+
+.img-girada {
+  transform: rotate(180deg);
+}
